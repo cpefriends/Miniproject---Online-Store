@@ -1,0 +1,4 @@
+Add the Core logic of the service here
+
+Example:
+Implementations of the CRUD functions for the online store

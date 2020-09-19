@@ -1,0 +1,4 @@
+Add infrastructure related code here
+
+Example:
+Call to repository, another service, etc.
