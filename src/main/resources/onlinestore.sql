@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS ONLINE_STORE;
 CREATE DATABASE ONLINE_STORE;
 
+
 DROP TABLE IF EXISTS PRODUCTS;
 
 CREATE TABLE `PRODUCTS` (
@@ -89,3 +90,8 @@ CREATE TABLE `ADMINS`(
   `PASSWORD` varchar(255) NOT NULL,
   `EMAIL` varchar(255) NOT NULL
 );
+
+INSERT INTO `admins`(`USERNAME`, `PASSWORD`, `EMAIL`) VALUES ("admin", "password", "miniproject399@gmail.com");
+
+INSERT INTO `payment_methods`(`PAYMENT_METHOD_NAME`) VALUES ("Cash on Delivery");
+INSERT INTO `payment_methods`(`PAYMENT_METHOD_NAME`) VALUES ("Credit Card");
