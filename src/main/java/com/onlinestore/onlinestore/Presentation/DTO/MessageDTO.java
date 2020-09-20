@@ -1,17 +1,18 @@
-package com.onlinestore.onlinestore.Core;
+package com.onlinestore.onlinestore.Presentation.DTO;
 
-import lombok.AllArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Messages {
+
+public class MessageDTO {
     private long messageID;
     private String nameSender;
     private String emailSender;
