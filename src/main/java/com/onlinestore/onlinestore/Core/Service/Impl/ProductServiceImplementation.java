@@ -1,11 +1,15 @@
 package com.onlinestore.onlinestore.Core.Service.Impl;
 
+import com.onlinestore.onlinestore.Core.Product;
 import com.onlinestore.onlinestore.Core.Service.ProductService;
 import com.onlinestore.onlinestore.Infrastructure.Entity.ProductEntity;
 import com.onlinestore.onlinestore.Infrastructure.Repository.ProductRepository;
 import com.onlinestore.onlinestore.Presentation.DTO.ProductDTO;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Column;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,14 +22,14 @@ public class ProductServiceImplementation implements ProductService {
     }
 
     @Override
-    public List<ProductDTO> getAll() {
-        List<ProductDTO> productDTOList = null;
+    public List<Product> getAll() {
+        List<Product> productList = new ArrayList<Product>();
 
         List<ProductEntity> productEntities = productRepository.findAll();
 
         for (ProductEntity productEntity : productEntities) {
-            productDTOList.add(
-                    ProductDTO.builder().productID(productEntity.getProductID())
+            productList.add(
+                    Product.builder().productID(productEntity.getProductID())
                     .productName(productEntity.getProductName())
                     .productPrice(productEntity.getProductPrice())
                     .productDescription(productEntity.getProductDescription())
@@ -36,7 +40,24 @@ public class ProductServiceImplementation implements ProductService {
                     .build()
             );
         }
-        return productDTOList;
+        return productList;
+    }
+
+    @Override
+    public String createProduct(ProductDTO productDTO) {
+        ProductEntity productEntity = new ProductEntity();
+
+        productEntity.setProductName(productDTO.getProductName());
+        productEntity.setProductCode(productDTO.getProductCode());
+        productEntity.setProductPrice(productDTO.getProductPrice());
+        productEntity.setProductDescription(productDTO.getProductDescription());
+        productEntity.setProductThumbnail(productDTO.getProductThumbnail());
+        productEntity.setProductStock(0);
+        productEntity.setTotalSales(BigDecimal.valueOf(0));
+        productEntity.setProductStock(0);
+
+        productRepository.save(productEntity);
+
+        return "Successss";
     }
 }
-

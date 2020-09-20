@@ -12,11 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class ApplicationConfiguration {
 
     @Bean
-    ProductService productService(ProductRepository productRepository) {
-        return new ProductServiceImplementation(productRepository);
-    }
-
-    @Bean
     public WebMvcConfigurer corsConfigurer()
     {
         return new WebMvcConfigurer() {
