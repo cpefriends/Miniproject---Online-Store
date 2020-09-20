@@ -1,4 +1,4 @@
-package com.onlinestore.onlinestore.Core.Service;
+package com.onlinestore.onlinestore.Core;
 
 import lombok.AllArgsConstructor;
 import lombok.AllArgsConstructor;
