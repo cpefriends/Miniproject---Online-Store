@@ -58,6 +58,24 @@ public class ProductServiceImplementation implements ProductService {
 
         productRepository.save(productEntity);
 
-        return "Successss";
+        return "Added";
+    }
+
+    @Override
+    public String updateProduct(ProductDTO productDTO) {
+        ProductEntity productEntity = productRepository.findById(productDTO.getProductID());
+
+        productEntity.setProductName(productDTO.getProductName());
+        productEntity.setProductCode(productDTO.getProductCode());
+        productEntity.setProductPrice(productDTO.getProductPrice());
+        productEntity.setProductDescription(productDTO.getProductDescription());
+        productEntity.setProductThumbnail(productDTO.getProductThumbnail());
+        productEntity.setProductStock(productDTO.getProductStock());
+        productEntity.setTotalSales(productDTO.getTotalSales());
+        productEntity.setProductStock(productDTO.getProductStock());
+
+        productRepository.save(productEntity);
+
+        return "Updated";
     }
 }

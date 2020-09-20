@@ -27,4 +27,9 @@ public class ProductController {
     public String getAllProducts(@RequestBody ProductDTO productDTO) {
         return productService.createProduct(productDTO);
     }
+
+    @PutMapping(value = "/updateProduct")
+    public String updateProduct(@RequestBody ProductDTO productDTO) {
+        return productService.updateProduct(productDTO);
+    }
 }
