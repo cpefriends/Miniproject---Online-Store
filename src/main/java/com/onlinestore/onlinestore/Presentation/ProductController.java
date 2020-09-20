@@ -19,4 +19,9 @@ public class ProductController {
         return productService.getAll();
     }
 
+    @GetMapping(value = "print")
+    public String getMssage() {
+        return "ASDA";
+    }
+
 }
