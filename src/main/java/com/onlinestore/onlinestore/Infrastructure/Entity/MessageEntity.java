@@ -20,7 +20,7 @@ public class MessageEntity {
     @Id
     @Column(name = "MESSAGE_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long orderID;
+    private long messageID;
 
     @Column(name = "NAME")
     private String nameSender;
