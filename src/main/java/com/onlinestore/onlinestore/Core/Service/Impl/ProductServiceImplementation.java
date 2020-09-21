@@ -13,12 +13,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class ProductServiceImplementation implements ProductService {
 
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
     public ProductServiceImplementation(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
