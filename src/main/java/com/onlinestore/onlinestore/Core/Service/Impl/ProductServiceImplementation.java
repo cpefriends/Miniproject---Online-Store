@@ -5,6 +5,7 @@ import com.onlinestore.onlinestore.Core.Service.ProductService;
 import com.onlinestore.onlinestore.Infrastructure.Entity.ProductEntity;
 import com.onlinestore.onlinestore.Infrastructure.Repository.ProductRepository;
 import com.onlinestore.onlinestore.Presentation.DTO.ProductDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ import java.util.List;
 @Service
 public class ProductServiceImplementation implements ProductService {
 
+    @Autowired
     ProductRepository productRepository;
 
     public ProductServiceImplementation(ProductRepository productRepository) {

@@ -3,6 +3,7 @@ package com.onlinestore.onlinestore.Presentation;
 import com.onlinestore.onlinestore.Core.Product;
 import com.onlinestore.onlinestore.Core.Service.ProductService;
 import com.onlinestore.onlinestore.Presentation.DTO.ProductDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,11 +13,8 @@ import java.util.List;
 @RequestMapping(value = "/product")
 public class ProductController {
 
+    @Autowired
     private ProductService productService;
-
-    public ProductController(ProductService productService){
-        this.productService = productService;
-    }
 
     @GetMapping(value = "/getAll")
     public List<Product> getAllProducts() {
