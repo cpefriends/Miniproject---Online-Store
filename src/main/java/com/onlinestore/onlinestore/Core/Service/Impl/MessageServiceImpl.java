@@ -19,7 +19,8 @@ public class MessageServiceImpl implements MessageService {
     public List<Message> getAll() {
         List<Message> messageList = new ArrayList<Message>();
 
-        List<MessageEntity> messageEntities
+        List<MessageEntity> messageEntities;
 
+        return messageList;
     }
 }
